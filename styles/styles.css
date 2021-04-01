@@ -1,0 +1,23 @@
+#main_calc_body {
+  width: fit-content;
+  height: fit-content;
+  background-color: aqua;
+  padding: 25px;
+  margin: 15px;
+}
+
+#user_input,#calc_result {
+  background-color: white;
+  border: black 2px solid;
+  padding: 2px 15px;
+  margin-bottom: 10px;
+}
+
+#numbers {
+    font-size: 35px;
+    font-weight: 200;
+}
+
+#labels{
+    text-align: right;    
+}
