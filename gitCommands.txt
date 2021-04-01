@@ -1,0 +1,11 @@
+1. git config --global user.name "paritoshgharpure"
+2. git config --global user.email "phgstudy@gmail.com"
+3. touch .gitignore
+4. git init
+5. git add .
+6. git commit -m "Initial commit"
+7. git status
+8. ssh-keygen -t ed25519 -C "phgstudy@gmail.com"
+9. add SSH key to your github
+10. git remote add origin "URL of your git project"
+11. git push origin master
