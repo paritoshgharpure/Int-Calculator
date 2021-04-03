@@ -27,6 +27,7 @@ function calculate(operandOne, operator, operandTwo) {
   calcResultLabel.textContent = result;
   operandOne = result;
   isOperandOneFlag = false;
+  isResultSet = true;
 }
 
 function numberClicked(someNumber) {
@@ -61,12 +62,14 @@ function operatorClicked(operatorSign) {
     userInputLabel.textContent = calcString;
   } else {
     isOperandOneFlag = true;
+    isResultSet = true;
     operator = operatorSign;
     operandOne = result;
     operandTwo = 0;
     calcString = generateCalcString(operandOne, operator, operandTwo);
     userInputLabel.textContent = calcString;
   }
+  isResultSet = false;
 }
 
 function generateCalcString(operandOne, operator, operandTwo) {
@@ -111,10 +114,6 @@ function zeroClicked() {
 }
 
 function plusClicked() {
-  // isOperandOneFlag = true;
-  // operator = '+';
-  // calcString = `${operandOne} ${operator}`;
-  // userInputLabel.textContent = calcString;
   operatorClicked('+');
 }
 
@@ -140,18 +139,21 @@ function clearAllClicked() {
   isResultSet = false;
 }
 function BackspaceClicked() {
-  operandTwo = operandTwo / 10;
-  userInputLabel.textContent = generateCalcString(
-    operandOne,
-    operator,
-    operandTwo
-  );
+  // operandTwo = operandTwo / 10;
+  // userInputLabel.textContent = generateCalcString(
+  //   operandOne,
+  //   operator,
+  //   operandTwo
+  // );
 }
 
 function equalToClicked() {
-  if (operandOne == 0 || operandTwo == 0 || operator == '') {
+  if (operandOne == null || operandTwo == null || operator == '') {
     alert('Enter data first!');
   } else {
     calculate(operandOne, operator, operandTwo);
+    if (calcResultLabel.textContent == 'NaN') {
+      alert('Please use CLR to proceed');
+    }
   }
 }

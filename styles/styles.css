@@ -6,6 +6,10 @@
   margin: 15px;
 }
 
+body{
+  background-color: black;
+}
+
 #user_input,#calc_result {
   background-color: white;
   border: black 2px solid;
